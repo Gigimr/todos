@@ -7,6 +7,7 @@ function Tasks() {
     width: '100%',
     position: 'absolute',
     height: '250px',
+    marginTop: '20px',
     zIndex: '-1',
   };
 
@@ -18,8 +19,8 @@ function Tasks() {
             <Container sx={containerStyle}></Container>
             <Typography
               variant="h3"
-              align="center"
-              marginTop="30px"
+              textAlign="center"
+              paddingTop="40px"
               color="white">
               My Tasks
             </Typography>
