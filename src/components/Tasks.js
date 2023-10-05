@@ -7,7 +7,6 @@ function Tasks() {
     width: '100%',
     position: 'absolute',
     height: '250px',
-    marginTop: '20px',
     zIndex: '-1',
   };
 
