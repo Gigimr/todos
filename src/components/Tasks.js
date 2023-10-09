@@ -6,7 +6,7 @@ function Tasks() {
       'linear-gradient(53deg, rgba(78,43,233,1) 20%, rgba(121,9,111,1) 100%)',
     width: '100%',
     position: 'absolute',
-    height: '250px',
+    height: '200px',
     zIndex: '-1',
   };
 
@@ -19,7 +19,7 @@ function Tasks() {
             <Typography
               variant="h3"
               textAlign="center"
-              paddingTop="40px"
+              paddingTop="30px"
               color="white">
               My Tasks
             </Typography>

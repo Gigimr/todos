@@ -1,6 +1,7 @@
 import './App.css';
 import { Box } from '@mui/material';
 import Tasks from './components/Tasks';
+import TaskForm from './components/TaskForm';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         display: 'inline-block',
       }}>
       <Tasks />
+      <TaskForm />
     </Box>
   );
 }
