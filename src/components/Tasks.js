@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-
+import { useSelector } from 'react-redux';
+import TaskForm from './TaskForm';
 function Tasks() {
   const containerStyle = {
     backgroundImage:
@@ -10,9 +11,12 @@ function Tasks() {
     zIndex: '-1',
   };
 
+  const tasks = useSelector((state) => state.tasks);
+
   return (
     <>
       <Grid alignItems="center" justifyContent="center" container spacing={0}>
+        {/* header */}
         <Grid item xs={12} md={8} lg={8}>
           <Box sx={{ position: 'relative' }}>
             <Container sx={containerStyle}></Container>
@@ -24,6 +28,18 @@ function Tasks() {
               My Tasks
             </Typography>
           </Box>
+        </Grid>
+        {/* task form */}
+        <Grid item xs={12} md={8} lg={8}>
+          <TaskForm />
+        </Grid>
+        {/* task list */}
+        <Grid item xs={12} md={8} lg={8}>
+          {tasks.map((task) => (
+            <div key={task.id}>
+              <p>{task.description}</p>{' '}
+            </div>
+          ))}
         </Grid>
       </Grid>
     </>
