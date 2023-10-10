@@ -1,6 +1,6 @@
 import './App.css';
 import { Box } from '@mui/material';
-import Tasks from './components/Tasks';
+import TasksPage from './pages/TasksPage';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         width: '100%',
         display: 'inline-block',
       }}>
-      <Tasks />
+      <TasksPage />
     </Box>
   );
 }

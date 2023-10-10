@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import { useSelector } from 'react-redux';
-import TaskForm from './TaskForm';
-import Header from './Header';
+import TaskForm from '../components/TaskForm';
+import Header from '../components/Header';
 
 function Tasks() {
   const tasks = useSelector((state) => state.tasks);
