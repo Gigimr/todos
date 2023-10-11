@@ -12,8 +12,8 @@ function Header() {
 
   return (
     <Grid item xs={12} md={8} lg={8}>
-      <Container sx={containerStyle}></Container>
       <Box sx={{ position: 'relative' }}>
+        <Container sx={containerStyle}></Container>
         <Typography
           variant="h3"
           textAlign="center"
