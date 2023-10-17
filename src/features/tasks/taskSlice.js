@@ -9,8 +9,12 @@ export const taskSlice = createSlice({
     addTask: (state, action) => {
       state.push(action.payload);
     },
+    clearAll: (state, action) => {
+      console.log('clearAll');
+      return initialState;
+    },
   },
 });
 
-export const { addTask } = taskSlice.actions;
+export const { addTask, clearAll } = taskSlice.actions;
 export default taskSlice.reducer;
