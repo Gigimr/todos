@@ -40,7 +40,7 @@ function TaskForm() {
         <Input
           name="description"
           type="text"
-          placeholder=" Add a new task..."
+          placeholder="   Add a new task..."
           value={task.description}
           onChange={handleChange}
           onKeyDown={submitOnEnter}
