@@ -15,12 +15,14 @@ import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRen
 import { clearAll } from '../features/tasks/taskSlice';
 
 function TaskList() {
-  const tasks = useSelector((state) => state.tasks);
+  const tasks = useSelector((state) => state.tasksState.tasks);
+
   const dispatch = useDispatch();
 
   const deleteAllTasks = () => {
     dispatch(clearAll());
   };
+
   return (
     <List>
       <Grid
@@ -74,7 +76,10 @@ function TaskList() {
               <IconButton edge="end" sx={{ float: 'right' }}>
                 <DeleteOutlineOutlinedIcon sx={{ color: 'grey' }} />
               </IconButton>
-              <IconButton edge="end" sx={{ float: 'right' }}>
+              <IconButton
+                //onClick={editTasks}
+                edge="end"
+                sx={{ float: 'right' }}>
                 <DriveFileRenameOutlineOutlinedIcon />
               </IconButton>
             </Grid>
