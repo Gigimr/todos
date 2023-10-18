@@ -12,7 +12,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
-import { clearAll } from '../features/tasks/taskSlice';
+import { clearAll, editTask } from '../features/tasks/taskSlice';
 
 function TaskList() {
   const tasks = useSelector((state) => state.tasksState.tasks);
@@ -22,7 +22,9 @@ function TaskList() {
   const deleteAllTasks = () => {
     dispatch(clearAll());
   };
-
+  const handleEditTask = (task) => {
+    dispatch(editTask(task));
+  };
   return (
     <List>
       <Grid
@@ -77,7 +79,7 @@ function TaskList() {
                 <DeleteOutlineOutlinedIcon sx={{ color: 'grey' }} />
               </IconButton>
               <IconButton
-                //onClick={editTasks}
+                onClick={() => handleEditTask(task)}
                 edge="end"
                 sx={{ float: 'right' }}>
                 <DriveFileRenameOutlineOutlinedIcon />
