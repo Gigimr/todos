@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import TaskList from '../components/TaskList';
 
 function Tasks() {
-  const tasks = useSelector((state) => state.tasks);
+  const tasks = useSelector((state) => state.tasksState.tasks);
 
   return (
     <>

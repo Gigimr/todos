@@ -1,6 +1,6 @@
 import { Box, Input, Button, Grid } from '@mui/material';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addTask } from '../features/tasks/taskSlice';
 import { v4 as uuid } from 'uuid';
 
@@ -8,6 +8,7 @@ function TaskForm() {
   const [task, setTask] = useState({
     description: '',
   });
+  const editingTask = useSelector((state) => state.tasksState.editingTask);
 
   const dispatch = useDispatch();
 
@@ -34,6 +35,13 @@ function TaskForm() {
       handleSubmit(e);
     }
   };
+
+  useEffect(() => {
+    if (editingTask) {
+      setTask({ description: editingTask });
+    }
+  }, [editingTask]);
+
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
       <Grid item xs={8} md={8} lg={8}>
