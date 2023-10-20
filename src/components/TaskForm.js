@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 function TaskForm() {
   const [task, setTask] = useState({
     description: '',
+    complete: false,
   });
   const editingTask = useSelector((state) => state.tasksState.editingTask);
 
@@ -27,7 +28,7 @@ function TaskForm() {
         id: uuid(),
       })
     );
-    setTask({ description: '' });
+    setTask({ description: '', complete: false });
   };
 
   const submitOnEnter = (e) => {
@@ -50,6 +51,7 @@ function TaskForm() {
           type="text"
           placeholder="   Add a new task..."
           value={task.description}
+          autoFocus
           onChange={handleChange}
           onKeyDown={submitOnEnter}
           sx={{
@@ -71,7 +73,7 @@ function TaskForm() {
             paddingLeft: '20px',
             width: '100%',
             backgroundColor: 'white',
-            color: 'grey',
+            color: '#4F5154',
             height: '3rem',
           }}>
           ADD
